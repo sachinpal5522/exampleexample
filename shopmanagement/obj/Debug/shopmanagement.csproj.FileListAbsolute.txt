@@ -1,0 +1,11 @@
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\shopmanagement.exe.config
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\shopmanagement.exe
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\shopmanagement.pdb
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.csprojResolveAssemblyReference.cache
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Form1.resources
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Properties.Resources.resources
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.csproj.GenerateResource.Cache
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.exe
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.pdb
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\Bunifu_UI_v1.5.3.dll
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.MainForm.resources

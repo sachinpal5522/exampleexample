@@ -19,6 +19,7 @@ namespace shopmanagement
         public MainForm()
         {
             InitializeComponent();
+            dashboard.BringToFront();
         }
 
 
@@ -64,26 +65,31 @@ namespace shopmanagement
         {
             ActivePane.Top = DashboardBtn.Top;
             TopTitle.Text = "Dashboard";
+            dashboard.BringToFront();
         }
 
         private void Productbtn_Click(object sender, EventArgs e)
         {
             ActivePane.Top = Productbtn.Top;
             TopTitle.Text = "Product";
+            product.BringToFront();
         }
 
         private void Orderbtn_Click(object sender, EventArgs e)
         {
             ActivePane.Top = Orderbtn.Top;
             TopTitle.Text = "Order";
+            order.BringToFront();
         }
 
         private void Administrator_Click(object sender, EventArgs e)
         {
             ActivePane.Top = Administrator.Top;
             TopTitle.Text = "Administrator";
+            administratorcontent.BringToFront();
         }
 
+       
         //****************************************UI DESIGN ENDS HERE***************************************//
 
 

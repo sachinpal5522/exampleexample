@@ -42,6 +42,10 @@
             this.TopTitle = new System.Windows.Forms.Label();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
+            this.order = new shopmanagement.Order();
+            this.product = new shopmanagement.Product();
+            this.dashboard = new shopmanagement.Dashboard();
+            this.administratorcontent = new shopmanagement.administrator();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -228,14 +232,54 @@
             this.closebtn.UseVisualStyleBackColor = true;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // order
+            // 
+            this.order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.order.Location = new System.Drawing.Point(130, 82);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(870, 418);
+            this.order.TabIndex = 4;
+            // 
+            // product
+            // 
+            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.product.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.product.Location = new System.Drawing.Point(0, 0);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(1000, 500);
+            this.product.TabIndex = 3;
+            // 
+            // dashboard
+            // 
+            this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard.Location = new System.Drawing.Point(0, 0);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(1000, 500);
+            this.dashboard.TabIndex = 2;
+            // 
+            // administratorcontent
+            // 
+            this.administratorcontent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.administratorcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.administratorcontent.Location = new System.Drawing.Point(130, 82);
+            this.administratorcontent.Name = "administratorcontent";
+            this.administratorcontent.Size = new System.Drawing.Size(870, 418);
+            this.administratorcontent.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.administratorcontent);
+            this.Controls.Add(this.order);
             this.Controls.Add(this.TopPane);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.product);
+            this.Controls.Add(this.dashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -266,5 +310,9 @@
         private System.Windows.Forms.Button Productbtn;
         private System.Windows.Forms.Label TopTitle;
         private System.Windows.Forms.Panel panel3;
+        private Product product;
+        private Dashboard dashboard;
+        private Order order;
+        private administrator administratorcontent;
     }
 }

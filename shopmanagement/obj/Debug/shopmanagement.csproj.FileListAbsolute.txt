@@ -12,3 +12,5 @@ F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanage
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Product.resources
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Order.resources
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.administrator.resources
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.csprojResolveAssemblyReference.cache
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\MetroFramework.dll

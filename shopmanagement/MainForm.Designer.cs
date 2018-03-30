@@ -46,6 +46,7 @@
             this.product = new shopmanagement.Product();
             this.dashboard = new shopmanagement.Dashboard();
             this.administratorcontent = new shopmanagement.administrator();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -166,6 +167,7 @@
             // TopPane
             // 
             this.TopPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TopPane.Controls.Add(this.panel4);
             this.TopPane.Controls.Add(this.panel3);
             this.TopPane.Controls.Add(this.TopTitle);
             this.TopPane.Controls.Add(this.minimizebtn);
@@ -268,6 +270,15 @@
             this.administratorcontent.Size = new System.Drawing.Size(870, 418);
             this.administratorcontent.TabIndex = 5;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 77);
+            this.panel4.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,5 +325,6 @@
         private Dashboard dashboard;
         private Order order;
         private administrator administratorcontent;
+        private System.Windows.Forms.Panel panel4;
     }
 }

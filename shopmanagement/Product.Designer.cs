@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
@@ -40,26 +39,19 @@
             this.prodnametxt = new System.Windows.Forms.TextBox();
             this.txtpanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProductGridView = new System.Windows.Forms.DataGridView();
             this.Editcategory = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.comboboxpanel.SuspendLayout();
             this.prodnamepanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 2);
-            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.Editcategory);
             this.panel2.Controls.Add(this.updatebtn);
             this.panel2.Controls.Add(this.deletebtn);
@@ -67,9 +59,9 @@
             this.panel2.Controls.Add(this.comboboxpanel);
             this.panel2.Controls.Add(this.prodnamepanel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(255, 416);
+            this.panel2.Size = new System.Drawing.Size(255, 418);
             this.panel2.TabIndex = 1;
             // 
             // updatebtn
@@ -189,23 +181,23 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.ProductGridView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(255, 2);
+            this.panel3.Location = new System.Drawing.Point(255, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(615, 416);
+            this.panel3.Size = new System.Drawing.Size(615, 418);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // ProductGridView
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(615, 416);
-            this.dataGridView1.TabIndex = 0;
+            this.ProductGridView.AllowUserToDeleteRows = false;
+            this.ProductGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductGridView.Location = new System.Drawing.Point(0, 0);
+            this.ProductGridView.Name = "ProductGridView";
+            this.ProductGridView.ReadOnly = true;
+            this.ProductGridView.Size = new System.Drawing.Size(615, 418);
+            this.ProductGridView.TabIndex = 0;
             // 
             // Editcategory
             // 
@@ -221,6 +213,15 @@
             this.Editcategory.TabIndex = 5;
             this.Editcategory.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 418);
+            this.panel1.TabIndex = 6;
+            // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,7 +229,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "Product";
             this.Size = new System.Drawing.Size(870, 418);
             this.panel2.ResumeLayout(false);
@@ -236,17 +236,15 @@
             this.prodnamepanel.ResumeLayout(false);
             this.prodnamepanel.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProductGridView;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Panel prodnamepanel;
         private System.Windows.Forms.Button updatebtn;
@@ -257,5 +255,6 @@
         private System.Windows.Forms.Panel comboboxpanel;
         private MetroFramework.Controls.MetroComboBox categorycombo;
         private System.Windows.Forms.Button Editcategory;
+        private System.Windows.Forms.Panel panel1;
     }
 }

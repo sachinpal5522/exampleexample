@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Editcategory = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.txtpanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ProductGridView = new System.Windows.Forms.DataGridView();
-            this.Editcategory = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.comboboxpanel.SuspendLayout();
             this.prodnamepanel.SuspendLayout();
@@ -63,6 +63,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 418);
             this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 418);
+            this.panel1.TabIndex = 6;
+            // 
+            // Editcategory
+            // 
+            this.Editcategory.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.Editcategory.BackgroundImage = global::shopmanagement.Properties.Resources.edit;
+            this.Editcategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Editcategory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Editcategory.FlatAppearance.BorderSize = 0;
+            this.Editcategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Editcategory.Location = new System.Drawing.Point(216, 80);
+            this.Editcategory.Name = "Editcategory";
+            this.Editcategory.Size = new System.Drawing.Size(30, 30);
+            this.Editcategory.TabIndex = 5;
+            this.Editcategory.UseVisualStyleBackColor = false;
             // 
             // updatebtn
             // 
@@ -198,29 +221,6 @@
             this.ProductGridView.ReadOnly = true;
             this.ProductGridView.Size = new System.Drawing.Size(615, 418);
             this.ProductGridView.TabIndex = 0;
-            // 
-            // Editcategory
-            // 
-            this.Editcategory.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.Editcategory.BackgroundImage = global::shopmanagement.Properties.Resources.edit;
-            this.Editcategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Editcategory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Editcategory.FlatAppearance.BorderSize = 0;
-            this.Editcategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Editcategory.Location = new System.Drawing.Point(216, 80);
-            this.Editcategory.Name = "Editcategory";
-            this.Editcategory.Size = new System.Drawing.Size(30, 30);
-            this.Editcategory.TabIndex = 5;
-            this.Editcategory.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 418);
-            this.panel1.TabIndex = 6;
             // 
             // Product
             // 

@@ -15,3 +15,5 @@ F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanage
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.csprojResolveAssemblyReference.cache
 F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\MetroFramework.dll
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Stock.resources
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\StockManagementDatabase.mdf
+F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\StockManagementDatabase_log.ldf

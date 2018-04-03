@@ -89,7 +89,12 @@ namespace shopmanagement
             administratorcontent.BringToFront();
         }
 
-       
+        private void stockbtn_Click(object sender, EventArgs e)
+        {
+            ActivePane.Top = stockbtn.Top;
+            TopTitle.Text = "Stock Purchased";
+            Stockcontrol.BringToFront();
+        }
         //****************************************UI DESIGN ENDS HERE***************************************//
 
 

@@ -36,26 +36,29 @@
             this.DashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.titlelable = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPane = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TopTitle = new System.Windows.Forms.Label();
+            this.stockbtn = new System.Windows.Forms.Button();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.administratorcontent = new shopmanagement.administrator();
             this.order = new shopmanagement.Order();
             this.product = new shopmanagement.Product();
             this.dashboard = new shopmanagement.Dashboard();
-            this.administratorcontent = new shopmanagement.administrator();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.Stockcontrol = new shopmanagement.Stock();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopPane.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.panel1.Controls.Add(this.stockbtn);
             this.panel1.Controls.Add(this.Administrator);
             this.panel1.Controls.Add(this.Orderbtn);
             this.panel1.Controls.Add(this.Productbtn);
@@ -88,7 +91,7 @@
             this.Orderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Orderbtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Orderbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Orderbtn.Location = new System.Drawing.Point(5, 200);
+            this.Orderbtn.Location = new System.Drawing.Point(5, 250);
             this.Orderbtn.Name = "Orderbtn";
             this.Orderbtn.Size = new System.Drawing.Size(125, 30);
             this.Orderbtn.TabIndex = 4;
@@ -102,7 +105,7 @@
             this.Productbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Productbtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Productbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Productbtn.Location = new System.Drawing.Point(5, 150);
+            this.Productbtn.Location = new System.Drawing.Point(5, 200);
             this.Productbtn.Name = "Productbtn";
             this.Productbtn.Size = new System.Drawing.Size(125, 30);
             this.Productbtn.TabIndex = 3;
@@ -154,16 +157,6 @@
             this.titlelable.TabIndex = 9;
             this.titlelable.Text = "Stock Manager";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::shopmanagement.Properties.Resources.box;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // TopPane
             // 
             this.TopPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -180,6 +173,15 @@
             this.TopPane.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPane_MouseDown);
             this.TopPane.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPane_MouseMove);
             this.TopPane.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopPane_MouseUp);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 77);
+            this.panel4.TabIndex = 12;
             // 
             // panel3
             // 
@@ -201,6 +203,20 @@
             this.TopTitle.TabIndex = 10;
             this.TopTitle.Text = "Dashboard";
             this.TopTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stockbtn
+            // 
+            this.stockbtn.FlatAppearance.BorderSize = 0;
+            this.stockbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockbtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.stockbtn.Location = new System.Drawing.Point(5, 150);
+            this.stockbtn.Name = "stockbtn";
+            this.stockbtn.Size = new System.Drawing.Size(125, 30);
+            this.stockbtn.TabIndex = 7;
+            this.stockbtn.Text = "Stock";
+            this.stockbtn.UseVisualStyleBackColor = true;
+            this.stockbtn.Click += new System.EventHandler(this.stockbtn_Click);
             // 
             // minimizebtn
             // 
@@ -234,13 +250,32 @@
             this.closebtn.UseVisualStyleBackColor = true;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::shopmanagement.Properties.Resources.box;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // administratorcontent
+            // 
+            this.administratorcontent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.administratorcontent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.administratorcontent.Location = new System.Drawing.Point(0, 0);
+            this.administratorcontent.Name = "administratorcontent";
+            this.administratorcontent.Size = new System.Drawing.Size(1000, 500);
+            this.administratorcontent.TabIndex = 5;
+            // 
             // order
             // 
             this.order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.order.Location = new System.Drawing.Point(130, 82);
+            this.order.Location = new System.Drawing.Point(0, 0);
             this.order.Name = "order";
-            this.order.Size = new System.Drawing.Size(870, 418);
+            this.order.Size = new System.Drawing.Size(1000, 500);
             this.order.TabIndex = 4;
             // 
             // product
@@ -261,23 +296,14 @@
             this.dashboard.Size = new System.Drawing.Size(1000, 500);
             this.dashboard.TabIndex = 2;
             // 
-            // administratorcontent
+            // Stockcontrol
             // 
-            this.administratorcontent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.administratorcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.administratorcontent.Location = new System.Drawing.Point(130, 82);
-            this.administratorcontent.Name = "administratorcontent";
-            this.administratorcontent.Size = new System.Drawing.Size(870, 418);
-            this.administratorcontent.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 77);
-            this.panel4.TabIndex = 12;
+            this.Stockcontrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Stockcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Stockcontrol.Location = new System.Drawing.Point(130, 82);
+            this.Stockcontrol.Name = "Stockcontrol";
+            this.Stockcontrol.Size = new System.Drawing.Size(870, 418);
+            this.Stockcontrol.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -285,10 +311,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.administratorcontent);
-            this.Controls.Add(this.order);
+            this.Controls.Add(this.Stockcontrol);
             this.Controls.Add(this.TopPane);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.administratorcontent);
+            this.Controls.Add(this.order);
             this.Controls.Add(this.product);
             this.Controls.Add(this.dashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -298,9 +325,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TopPane.ResumeLayout(false);
             this.TopPane.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +353,7 @@
         private Order order;
         private administrator administratorcontent;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button stockbtn;
+        private Stock Stockcontrol;
     }
 }

@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.categorycombo = new MetroFramework.Controls.MetroComboBox();
+            this.catoverpanel = new System.Windows.Forms.Panel();
+            this.qtytxtpanel = new System.Windows.Forms.Panel();
+            this.qtytxt = new System.Windows.Forms.TextBox();
+            this.qtyoverpanel = new System.Windows.Forms.Panel();
+            this.Pricepanel = new System.Windows.Forms.Panel();
+            this.pricetxt = new System.Windows.Forms.TextBox();
+            this.priceoverpanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
@@ -38,22 +47,13 @@
             this.prooverpanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ProductGridView = new System.Windows.Forms.DataGridView();
-            this.Pricepanel = new System.Windows.Forms.Panel();
-            this.pricetxt = new System.Windows.Forms.TextBox();
-            this.priceoverpanel = new System.Windows.Forms.Panel();
-            this.qtytxtpanel = new System.Windows.Forms.Panel();
-            this.qtytxt = new System.Windows.Forms.TextBox();
-            this.qtyoverpanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.categorycombo = new MetroFramework.Controls.MetroComboBox();
-            this.catoverpanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.qtytxtpanel.SuspendLayout();
+            this.Pricepanel.SuspendLayout();
             this.comboboxpanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
-            this.Pricepanel.SuspendLayout();
-            this.qtytxtpanel.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -71,6 +71,113 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 418);
             this.panel2.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.categorycombo);
+            this.panel4.Controls.Add(this.catoverpanel);
+            this.panel4.Location = new System.Drawing.Point(29, 24);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 31);
+            this.panel4.TabIndex = 9;
+            // 
+            // categorycombo
+            // 
+            this.categorycombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.categorycombo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categorycombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.categorycombo.ForeColor = System.Drawing.Color.Honeydew;
+            this.categorycombo.FormattingEnabled = true;
+            this.categorycombo.ItemHeight = 23;
+            this.categorycombo.Location = new System.Drawing.Point(0, 0);
+            this.categorycombo.Name = "categorycombo";
+            this.categorycombo.Size = new System.Drawing.Size(200, 29);
+            this.categorycombo.Style = MetroFramework.MetroColorStyle.Green;
+            this.categorycombo.TabIndex = 1;
+            this.categorycombo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.categorycombo.UseCustomBackColor = true;
+            this.categorycombo.UseCustomForeColor = true;
+            this.categorycombo.UseSelectable = true;
+            this.categorycombo.UseStyleColors = true;
+            this.categorycombo.Enter += new System.EventHandler(this.categorycombo_Enter);
+            this.categorycombo.Leave += new System.EventHandler(this.categorycombo_Leave);
+            // 
+            // catoverpanel
+            // 
+            this.catoverpanel.BackColor = System.Drawing.Color.Honeydew;
+            this.catoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.catoverpanel.Location = new System.Drawing.Point(0, 29);
+            this.catoverpanel.Name = "catoverpanel";
+            this.catoverpanel.Size = new System.Drawing.Size(200, 2);
+            this.catoverpanel.TabIndex = 0;
+            // 
+            // qtytxtpanel
+            // 
+            this.qtytxtpanel.Controls.Add(this.qtytxt);
+            this.qtytxtpanel.Controls.Add(this.qtyoverpanel);
+            this.qtytxtpanel.Location = new System.Drawing.Point(29, 132);
+            this.qtytxtpanel.Name = "qtytxtpanel";
+            this.qtytxtpanel.Size = new System.Drawing.Size(41, 31);
+            this.qtytxtpanel.TabIndex = 8;
+            // 
+            // qtytxt
+            // 
+            this.qtytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qtytxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.qtytxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.qtytxt.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qtytxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.qtytxt.Location = new System.Drawing.Point(0, 0);
+            this.qtytxt.Name = "qtytxt";
+            this.qtytxt.Size = new System.Drawing.Size(41, 27);
+            this.qtytxt.TabIndex = 1;
+            this.qtytxt.Text = "Qty";
+            this.qtytxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.qtytxt.Enter += new System.EventHandler(this.qtytxt_Enter);
+            this.qtytxt.Leave += new System.EventHandler(this.qtytxt_Leave);
+            // 
+            // qtyoverpanel
+            // 
+            this.qtyoverpanel.BackColor = System.Drawing.Color.Honeydew;
+            this.qtyoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.qtyoverpanel.Location = new System.Drawing.Point(0, 29);
+            this.qtyoverpanel.Name = "qtyoverpanel";
+            this.qtyoverpanel.Size = new System.Drawing.Size(41, 2);
+            this.qtyoverpanel.TabIndex = 0;
+            // 
+            // Pricepanel
+            // 
+            this.Pricepanel.Controls.Add(this.pricetxt);
+            this.Pricepanel.Controls.Add(this.priceoverpanel);
+            this.Pricepanel.Location = new System.Drawing.Point(83, 132);
+            this.Pricepanel.Name = "Pricepanel";
+            this.Pricepanel.Size = new System.Drawing.Size(145, 31);
+            this.Pricepanel.TabIndex = 7;
+            // 
+            // pricetxt
+            // 
+            this.pricetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pricetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pricetxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pricetxt.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pricetxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.pricetxt.Location = new System.Drawing.Point(0, 0);
+            this.pricetxt.Name = "pricetxt";
+            this.pricetxt.Size = new System.Drawing.Size(145, 27);
+            this.pricetxt.TabIndex = 1;
+            this.pricetxt.Text = "Price";
+            this.pricetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pricetxt.Enter += new System.EventHandler(this.pricetxt_Enter);
+            this.pricetxt.Leave += new System.EventHandler(this.pricetxt_Leave);
+            // 
+            // priceoverpanel
+            // 
+            this.priceoverpanel.BackColor = System.Drawing.Color.Honeydew;
+            this.priceoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.priceoverpanel.Location = new System.Drawing.Point(0, 29);
+            this.priceoverpanel.Name = "priceoverpanel";
+            this.priceoverpanel.Size = new System.Drawing.Size(145, 2);
+            this.priceoverpanel.TabIndex = 0;
             // 
             // panel1
             // 
@@ -185,113 +292,6 @@
             this.ProductGridView.Size = new System.Drawing.Size(615, 418);
             this.ProductGridView.TabIndex = 1;
             // 
-            // Pricepanel
-            // 
-            this.Pricepanel.Controls.Add(this.pricetxt);
-            this.Pricepanel.Controls.Add(this.priceoverpanel);
-            this.Pricepanel.Location = new System.Drawing.Point(83, 132);
-            this.Pricepanel.Name = "Pricepanel";
-            this.Pricepanel.Size = new System.Drawing.Size(145, 31);
-            this.Pricepanel.TabIndex = 7;
-            // 
-            // pricetxt
-            // 
-            this.pricetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pricetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pricetxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pricetxt.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pricetxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.pricetxt.Location = new System.Drawing.Point(0, 0);
-            this.pricetxt.Name = "pricetxt";
-            this.pricetxt.Size = new System.Drawing.Size(145, 27);
-            this.pricetxt.TabIndex = 1;
-            this.pricetxt.Text = "Price";
-            this.pricetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pricetxt.Enter += new System.EventHandler(this.pricetxt_Enter);
-            this.pricetxt.Leave += new System.EventHandler(this.pricetxt_Leave);
-            // 
-            // priceoverpanel
-            // 
-            this.priceoverpanel.BackColor = System.Drawing.Color.Honeydew;
-            this.priceoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.priceoverpanel.Location = new System.Drawing.Point(0, 29);
-            this.priceoverpanel.Name = "priceoverpanel";
-            this.priceoverpanel.Size = new System.Drawing.Size(145, 2);
-            this.priceoverpanel.TabIndex = 0;
-            // 
-            // qtytxtpanel
-            // 
-            this.qtytxtpanel.Controls.Add(this.qtytxt);
-            this.qtytxtpanel.Controls.Add(this.qtyoverpanel);
-            this.qtytxtpanel.Location = new System.Drawing.Point(29, 132);
-            this.qtytxtpanel.Name = "qtytxtpanel";
-            this.qtytxtpanel.Size = new System.Drawing.Size(41, 31);
-            this.qtytxtpanel.TabIndex = 8;
-            // 
-            // qtytxt
-            // 
-            this.qtytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qtytxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.qtytxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qtytxt.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtytxt.ForeColor = System.Drawing.SystemColors.Window;
-            this.qtytxt.Location = new System.Drawing.Point(0, 0);
-            this.qtytxt.Name = "qtytxt";
-            this.qtytxt.Size = new System.Drawing.Size(41, 27);
-            this.qtytxt.TabIndex = 1;
-            this.qtytxt.Text = "Qty";
-            this.qtytxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.qtytxt.Enter += new System.EventHandler(this.qtytxt_Enter);
-            this.qtytxt.Leave += new System.EventHandler(this.qtytxt_Leave);
-            // 
-            // qtyoverpanel
-            // 
-            this.qtyoverpanel.BackColor = System.Drawing.Color.Honeydew;
-            this.qtyoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.qtyoverpanel.Location = new System.Drawing.Point(0, 29);
-            this.qtyoverpanel.Name = "qtyoverpanel";
-            this.qtyoverpanel.Size = new System.Drawing.Size(41, 2);
-            this.qtyoverpanel.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.categorycombo);
-            this.panel4.Controls.Add(this.catoverpanel);
-            this.panel4.Location = new System.Drawing.Point(29, 24);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 31);
-            this.panel4.TabIndex = 9;
-            // 
-            // categorycombo
-            // 
-            this.categorycombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.categorycombo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categorycombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.categorycombo.ForeColor = System.Drawing.Color.Honeydew;
-            this.categorycombo.FormattingEnabled = true;
-            this.categorycombo.ItemHeight = 23;
-            this.categorycombo.Location = new System.Drawing.Point(0, 0);
-            this.categorycombo.Name = "categorycombo";
-            this.categorycombo.Size = new System.Drawing.Size(200, 29);
-            this.categorycombo.Style = MetroFramework.MetroColorStyle.Green;
-            this.categorycombo.TabIndex = 1;
-            this.categorycombo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.categorycombo.UseCustomBackColor = true;
-            this.categorycombo.UseCustomForeColor = true;
-            this.categorycombo.UseSelectable = true;
-            this.categorycombo.UseStyleColors = true;
-            this.categorycombo.Enter += new System.EventHandler(this.categorycombo_Enter);
-            this.categorycombo.Leave += new System.EventHandler(this.categorycombo_Leave);
-            // 
-            // catoverpanel
-            // 
-            this.catoverpanel.BackColor = System.Drawing.Color.Honeydew;
-            this.catoverpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.catoverpanel.Location = new System.Drawing.Point(0, 29);
-            this.catoverpanel.Name = "catoverpanel";
-            this.catoverpanel.Size = new System.Drawing.Size(200, 2);
-            this.catoverpanel.TabIndex = 0;
-            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,14 +302,14 @@
             this.Name = "Stock";
             this.Size = new System.Drawing.Size(870, 418);
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.qtytxtpanel.ResumeLayout(false);
+            this.qtytxtpanel.PerformLayout();
+            this.Pricepanel.ResumeLayout(false);
+            this.Pricepanel.PerformLayout();
             this.comboboxpanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
-            this.Pricepanel.ResumeLayout(false);
-            this.Pricepanel.PerformLayout();
-            this.qtytxtpanel.ResumeLayout(false);
-            this.qtytxtpanel.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

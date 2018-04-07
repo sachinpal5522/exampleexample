@@ -86,10 +86,15 @@ namespace shopmanagement
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            MainForm m = new MainForm();
-            m.RefToForm1 = this;
-            this.Hide();
-            m.Show();
+
+            //if (true)
+            //{
+                MainForm m = new MainForm();
+                m.RefToForm1 = this;
+                this.Hide();
+                m.Show();
+            //}
+            //else{}
             
         }
     }

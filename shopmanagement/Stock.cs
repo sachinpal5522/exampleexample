@@ -7,14 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.Configuration;
 namespace shopmanagement
 {
     public partial class Stock : UserControl
     {
+        SqlConnection con;
         public Stock()
         {
             InitializeComponent();
+        }
+
+        private void Stock_Load(object sender, EventArgs e)
+        {
+            con= new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ToString());
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select id,UPPER(CategoryName) from Category");
+            cmd.Connection = con;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            categorycombo.DataSource = dt;
+            categorycombo.DisplayMember =dt.Columns[1].ColumnName;
+            categorycombo.ValueMember = dt.Columns[0].ColumnName;
+            con.Close();
         }
 
         //---------------------------------design function-----------------------------------//
@@ -75,5 +92,6 @@ namespace shopmanagement
         {
 
         }
+
     }
 }

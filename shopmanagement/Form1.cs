@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace shopmanagement
 {
@@ -82,20 +84,31 @@ namespace shopmanagement
             mouseDown = false;
         }
 
-//****************************************UI DESIGN ENDS HERE***************************************//
+        //****************************************UI DESIGN ENDS HERE***************************************//
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
 
-            //if (true)
-            //{
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ToString());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("select COUNT(*)FROM login WHERE uid='" + uidtext.Text + "' and password='" + passtext.Text + "'");
+
+            cmd.Connection = cn;
+            int OBJ = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+            if (OBJ > 0 == true)
+            {
                 MainForm m = new MainForm();
                 m.RefToForm1 = this;
                 this.Hide();
                 m.Show();
-            //}
-            //else{}
-            
+            }
+            else
+            {
+                MessageBox.Show("UserId & Password Is not correct Try again..!!");
+            }
+
         }
     }
 }

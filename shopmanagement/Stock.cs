@@ -32,6 +32,17 @@ namespace shopmanagement
             categorycombo.DisplayMember =dt.Columns[1].ColumnName;
             categorycombo.ValueMember = dt.Columns[0].ColumnName;
             con.Close();
+
+            con.Open();
+            SqlCommand cmd1= new SqlCommand("select id,UPPER(name) from product");
+            cmd1.Connection = con;
+            da = new SqlDataAdapter(cmd1);
+            DataTable dt1 = new DataTable();
+            da.Fill(dt1);
+            productcombo.DataSource = dt1;
+            productcombo.DisplayMember = dt1.Columns[1].ColumnName;
+            productcombo.ValueMember = dt1.Columns[0].ColumnName;
+            con.Close();
         }
 
         //---------------------------------design function-----------------------------------//

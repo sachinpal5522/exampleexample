@@ -301,7 +301,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "Stock";
             this.Size = new System.Drawing.Size(870, 418);
-            this.Load += new System.EventHandler(this.Stock_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.qtytxtpanel.ResumeLayout(false);

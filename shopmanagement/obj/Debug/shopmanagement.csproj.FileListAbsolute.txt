@@ -17,15 +17,6 @@ F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\MetroFrame
 F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.Stock.resources
 F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\StockManagementDatabase.mdf
 F:\college\masters\semester 4\shopmanagement\shopmanagement\bin\Debug\StockManagementDatabase_log.ldf
-E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.exe.config
-E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.exe
-E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.pdb
-E:\exampleexample\shopmanagement\bin\Debug\StockManagementDatabase.mdf
-E:\exampleexample\shopmanagement\bin\Debug\StockManagementDatabase_log.ldf
-E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.exe
-E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.pdb
-E:\exampleexample\shopmanagement\bin\Debug\MetroFramework.dll
-E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.csprojResolveAssemblyReference.cache
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.administrator.resources
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.Dashboard.resources
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.Form1.resources
@@ -35,3 +26,11 @@ E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.Product.resources
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.Properties.Resources.resources
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.Stock.resources
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.csproj.GenerateResource.Cache
+E:\exampleexample\shopmanagement\bin\Debug\StockManagementDatabase.mdf
+E:\exampleexample\shopmanagement\bin\Debug\StockManagementDatabase_log.ldf
+E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.exe.config
+E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.exe
+E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.pdb
+E:\exampleexample\shopmanagement\bin\Debug\MetroFramework.dll
+E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.exe
+E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.pdb

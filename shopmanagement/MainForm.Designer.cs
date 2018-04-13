@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.stockbtn = new System.Windows.Forms.Button();
             this.Administrator = new System.Windows.Forms.Button();
             this.Orderbtn = new System.Windows.Forms.Button();
             this.Productbtn = new System.Windows.Forms.Button();
@@ -36,14 +37,13 @@
             this.DashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.titlelable = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPane = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TopTitle = new System.Windows.Forms.Label();
-            this.stockbtn = new System.Windows.Forms.Button();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.administratorcontent = new shopmanagement.administrator();
             this.order = new shopmanagement.Order();
             this.product = new shopmanagement.Product();
@@ -51,8 +51,8 @@
             this.Stockcontrol = new shopmanagement.Stock();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.TopPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.TopPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +70,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(130, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // stockbtn
+            // 
+            this.stockbtn.FlatAppearance.BorderSize = 0;
+            this.stockbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockbtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.stockbtn.Location = new System.Drawing.Point(5, 150);
+            this.stockbtn.Name = "stockbtn";
+            this.stockbtn.Size = new System.Drawing.Size(125, 30);
+            this.stockbtn.TabIndex = 7;
+            this.stockbtn.Text = "Stock";
+            this.stockbtn.UseVisualStyleBackColor = true;
+            this.stockbtn.Click += new System.EventHandler(this.stockbtn_Click);
             // 
             // Administrator
             // 
@@ -149,13 +163,23 @@
             // titlelable
             // 
             this.titlelable.AutoSize = true;
-            this.titlelable.Font = new System.Drawing.Font("Ed Wood Movies", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlelable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titlelable.ForeColor = System.Drawing.Color.MintCream;
             this.titlelable.Location = new System.Drawing.Point(14, 55);
             this.titlelable.Name = "titlelable";
-            this.titlelable.Size = new System.Drawing.Size(101, 18);
+            this.titlelable.Size = new System.Drawing.Size(80, 13);
             this.titlelable.TabIndex = 9;
             this.titlelable.Text = "Stock Manager";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::shopmanagement.Properties.Resources.box;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // TopPane
             // 
@@ -204,20 +228,6 @@
             this.TopTitle.Text = "Dashboard";
             this.TopTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // stockbtn
-            // 
-            this.stockbtn.FlatAppearance.BorderSize = 0;
-            this.stockbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stockbtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.stockbtn.Location = new System.Drawing.Point(5, 150);
-            this.stockbtn.Name = "stockbtn";
-            this.stockbtn.Size = new System.Drawing.Size(125, 30);
-            this.stockbtn.TabIndex = 7;
-            this.stockbtn.Text = "Stock";
-            this.stockbtn.UseVisualStyleBackColor = true;
-            this.stockbtn.Click += new System.EventHandler(this.stockbtn_Click);
-            // 
             // minimizebtn
             // 
             this.minimizebtn.BackgroundImage = global::shopmanagement.Properties.Resources.minimize;
@@ -249,16 +259,6 @@
             this.closebtn.TabIndex = 8;
             this.closebtn.UseVisualStyleBackColor = true;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::shopmanagement.Properties.Resources.box;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // administratorcontent
             // 
@@ -304,6 +304,7 @@
             this.Stockcontrol.Name = "Stockcontrol";
             this.Stockcontrol.Size = new System.Drawing.Size(870, 418);
             this.Stockcontrol.TabIndex = 6;
+            this.Stockcontrol.Load += new System.EventHandler(this.Stockcontrol_Load);
             // 
             // MainForm
             // 
@@ -325,9 +326,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TopPane.ResumeLayout(false);
             this.TopPane.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

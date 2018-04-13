@@ -7,17 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace shopmanagement
 {
     public partial class Order : UserControl
     {
+        SqlConnection con;
         public Order()
         {
             InitializeComponent();
         }
 
-//---------------------------------design function-----------------------------------//
+
+        private void Order_Load(object sender, EventArgs e)
+        {
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ToString());
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select id,UPPER(CategoryName) from Category");
+            cmd.Connection = con;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            categorycombo.DataSource = dt;
+            categorycombo.DisplayMember = dt.Columns[1].ColumnName;
+            categorycombo.ValueMember = dt.Columns[0].ColumnName;
+            con.Close();
+
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("select id,UPPER(name) from product");
+            cmd1.Connection = con;
+            da = new SqlDataAdapter(cmd1);
+            DataTable dt1 = new DataTable();
+            da.Fill(dt1);
+            productcombo.DataSource = dt1;
+            productcombo.DisplayMember = dt1.Columns[1].ColumnName;
+            productcombo.ValueMember = dt1.Columns[0].ColumnName;
+            con.Close();
+        }
+        //---------------------------------design function-----------------------------------//
         private void categorycombo_Enter(object sender, EventArgs e)
         {
             catoverpanel.BackColor = Color.MediumSeaGreen;

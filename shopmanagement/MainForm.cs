@@ -7,25 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace shopmanagement
 {
     public partial class MainForm : Form
     {
-        public Form RefToForm1 { get; set; }
+        public Form1 RefToForm1 { get; set; }
         private bool mouseDown;
-        private Point lastLocation;
-
+        private Point lastLocation;  
         public MainForm()
         {
             InitializeComponent();
             dashboard.BringToFront();
         }
 
-
-
         //**********************************UI design functions******************************************//
-        
+
         private void closebtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,7 +92,16 @@ namespace shopmanagement
             ActivePane.Top = stockbtn.Top;
             TopTitle.Text = "Stock Purchased";
             Stockcontrol.BringToFront();
+           
         }
+
+        private void Stockcontrol_Load(object sender, EventArgs e)
+        {
+            Stockcontrol.con = RefToForm1.cn;
+            Stockcontrol.populate();
+        }
+
+
         //****************************************UI DESIGN ENDS HERE***************************************//
 
 

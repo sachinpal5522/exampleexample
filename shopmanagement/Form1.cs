@@ -16,7 +16,7 @@ namespace shopmanagement
     {
         private bool mouseDown;
         private Point lastLocation;
-
+        public SqlConnection cn;
         public Form1()
         {
             InitializeComponent();
@@ -89,13 +89,13 @@ namespace shopmanagement
         private void loginbtn_Click(object sender, EventArgs e)
         {
 
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ToString());
+            cn = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
             cn.Open();
             SqlCommand cmd = new SqlCommand("select COUNT(*)FROM login WHERE uid='" + uidtext.Text + "' and password='" + passtext.Text + "'");
 
             cmd.Connection = cn;
             int OBJ = Convert.ToInt32(cmd.ExecuteScalar());
-
+            cn.Close();
 
             if (OBJ > 0 == true)
             {

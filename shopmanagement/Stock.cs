@@ -62,12 +62,17 @@ namespace shopmanagement
         {
             priceoverpanel.BackColor = Color.Honeydew;
         }
-        //----------------------------------ends here-----------------------------------//
 
-        public void populate()
+        private void categorycombo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-           // con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("select id,UPPER(CategoryName) from Category");
+            int id = Convert.ToInt32(categorycombo.SelectedValue);
+            populateproduct(id);
+        }
+
+        public void populatecategory()
+        {
+            // con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("select id,UPPER(CategoryName) Category from Category order by Category");
             cmd.Connection = con;
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -75,41 +80,54 @@ namespace shopmanagement
             categorycombo.DataSource = dt;
             categorycombo.DisplayMember = dt.Columns[1].ColumnName;
             categorycombo.ValueMember = dt.Columns[0].ColumnName;
+            int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+            populateproduct(id);
+            populategrid();
+        }
 
-            SqlCommand cmd1 = new SqlCommand("select id,UPPER(name) from product");
+        void populategrid()
+        {
+            
+            SqlCommand cmd = new SqlCommand("select * from StockPurchased",con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            ProductGridView.DataSource = dt;
+        }
+
+        void populateproduct(int id)
+        {
+            SqlCommand cmd1 = new SqlCommand("select id,UPPER(name)product_name from product where cid =" + id + " order by product_name");
             cmd1.Connection = con;
-            da = new SqlDataAdapter(cmd1);
+            SqlDataAdapter da = new SqlDataAdapter(cmd1);
             DataTable dt1 = new DataTable();
             da.Fill(dt1);
             productcombo.DataSource = dt1;
             productcombo.DisplayMember = dt1.Columns[1].ColumnName;
             productcombo.ValueMember = dt1.Columns[0].ColumnName;
         }
+        //----------------------------------ends here-----------------------------------//
 
-     
+
+
+
         private void addbtn_Click(object sender, EventArgs e)
         {
            // SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
             
-            int cid =Convert.ToInt32(categorycombo.SelectedValue);
             int pid = Convert.ToInt32(productcombo.SelectedValue);
             int buyprice=Convert.ToInt32(pricetxt.Text);
             int qty=Convert.ToInt32(qtytxt.Text);
-            SqlCommand cmd = new SqlCommand( "insert into StockPurchased values("+cid+","+pid+","+qty+","+buyprice+")",con);
-
+            SqlCommand cmd = new SqlCommand( "insert into StockPurchased values("+pid+","+qty+","+buyprice+",'"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"')",con);
+            
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
-
-            if (i!=0)
-            {
-                MessageBox.Show("Data added Successfully");
-            }
-            else
+            if(i==0)
             {
                 MessageBox.Show("Something went wrong");
             }
-            
+            populategrid();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -117,10 +135,7 @@ namespace shopmanagement
 
         }
 
-        private void updatebtn_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
     }
 }

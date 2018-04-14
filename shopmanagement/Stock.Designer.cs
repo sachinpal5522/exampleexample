@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.categorycombo = new MetroFramework.Controls.MetroComboBox();
@@ -39,7 +44,6 @@
             this.pricetxt = new System.Windows.Forms.TextBox();
             this.priceoverpanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
             this.comboboxpanel = new System.Windows.Forms.Panel();
@@ -62,7 +66,6 @@
             this.panel2.Controls.Add(this.qtytxtpanel);
             this.panel2.Controls.Add(this.Pricepanel);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.updatebtn);
             this.panel2.Controls.Add(this.deletebtn);
             this.panel2.Controls.Add(this.addbtn);
             this.panel2.Controls.Add(this.comboboxpanel);
@@ -99,6 +102,7 @@
             this.categorycombo.UseCustomForeColor = true;
             this.categorycombo.UseSelectable = true;
             this.categorycombo.UseStyleColors = true;
+            this.categorycombo.SelectionChangeCommitted += new System.EventHandler(this.categorycombo_SelectionChangeCommitted);
             this.categorycombo.Enter += new System.EventHandler(this.categorycombo_Enter);
             this.categorycombo.Leave += new System.EventHandler(this.categorycombo_Leave);
             // 
@@ -188,21 +192,6 @@
             this.panel1.Size = new System.Drawing.Size(5, 418);
             this.panel1.TabIndex = 6;
             // 
-            // updatebtn
-            // 
-            this.updatebtn.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.updatebtn.FlatAppearance.BorderSize = 0;
-            this.updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updatebtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.updatebtn.Location = new System.Drawing.Point(31, 323);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(200, 40);
-            this.updatebtn.TabIndex = 4;
-            this.updatebtn.Text = "Update Stock";
-            this.updatebtn.UseVisualStyleBackColor = false;
-            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
-            // 
             // deletebtn
             // 
             this.deletebtn.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -283,12 +272,58 @@
             // 
             // ProductGridView
             // 
+            this.ProductGridView.AllowUserToAddRows = false;
             this.ProductGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ProductGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.ProductGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ProductGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProductGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ProductGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.ProductGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductGridView.EnableHeadersVisualStyles = false;
+            this.ProductGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProductGridView.Location = new System.Drawing.Point(0, 0);
+            this.ProductGridView.MultiSelect = false;
             this.ProductGridView.Name = "ProductGridView";
             this.ProductGridView.ReadOnly = true;
+            this.ProductGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.ProductGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.ProductGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.ProductGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductGridView.Size = new System.Drawing.Size(615, 418);
             this.ProductGridView.TabIndex = 1;
             // 
@@ -318,7 +353,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Panel comboboxpanel;

@@ -98,7 +98,7 @@ namespace shopmanagement
         private void Stockcontrol_Load(object sender, EventArgs e)
         {
             Stockcontrol.con = RefToForm1.cn;
-            Stockcontrol.populate();
+            Stockcontrol.populatecategory();
         }
 
 

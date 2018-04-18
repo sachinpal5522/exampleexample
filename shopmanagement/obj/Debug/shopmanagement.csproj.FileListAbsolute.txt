@@ -34,3 +34,4 @@ E:\exampleexample\shopmanagement\bin\Debug\shopmanagement.pdb
 E:\exampleexample\shopmanagement\bin\Debug\MetroFramework.dll
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.exe
 E:\exampleexample\shopmanagement\obj\Debug\shopmanagement.pdb
+F:\college\masters\semester 4\shopmanagement\shopmanagement\obj\Debug\shopmanagement.CategoryForm.resources

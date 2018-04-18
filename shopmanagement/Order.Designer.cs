@@ -88,6 +88,7 @@
             this.returnbtn.TabIndex = 7;
             this.returnbtn.Text = "RETURN ORDER";
             this.returnbtn.UseVisualStyleBackColor = false;
+            this.returnbtn.Click += new System.EventHandler(this.returnbtn_Click);
             // 
             // soldbtn
             // 
@@ -102,6 +103,7 @@
             this.soldbtn.TabIndex = 6;
             this.soldbtn.Text = "PLACE ORDER";
             this.soldbtn.UseVisualStyleBackColor = false;
+            this.soldbtn.Click += new System.EventHandler(this.soldbtn_Click);
             // 
             // Pricepanel
             // 
@@ -198,6 +200,7 @@
             this.categorycombo.UseCustomForeColor = true;
             this.categorycombo.UseSelectable = true;
             this.categorycombo.UseStyleColors = true;
+            this.categorycombo.SelectionChangeCommitted += new System.EventHandler(this.categorycombo_SelectionChangeCommitted);
             this.categorycombo.Enter += new System.EventHandler(this.categorycombo_Enter);
             this.categorycombo.Leave += new System.EventHandler(this.categorycombo_Leave);
             // 
@@ -276,13 +279,14 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             this.OrderDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.OrderDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrderDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.OrderDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OrderDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.OrderDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;

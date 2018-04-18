@@ -81,6 +81,14 @@ namespace shopmanagement
             da.Fill(dt);
             ProductGridView.DataSource = dt;
         }
+
+        private void Editcategory_Click(object sender, EventArgs e)
+        {
+            CategoryForm cat = new CategoryForm();
+            cat.con = con;
+            cat.ShowDialog();
+
+        }
         //--------------------------------------ends here----------------------------------//
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -88,6 +96,6 @@ namespace shopmanagement
 
         }
 
-       
+        
     }
 }

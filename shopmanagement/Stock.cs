@@ -119,7 +119,6 @@ namespace shopmanagement
             int buyprice=Convert.ToInt32(pricetxt.Text);
             int qty=Convert.ToInt32(qtytxt.Text);
             SqlCommand cmd = new SqlCommand( "insert into StockPurchased values("+pid+","+qty+","+buyprice+",'"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"')",con);
-            
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();

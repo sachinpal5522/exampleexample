@@ -82,7 +82,7 @@ namespace shopmanagement
         void populategrid()
         {
 
-            SqlCommand cmd = new SqlCommand("select * from StockPurchased", con);
+            SqlCommand cmd = new SqlCommand("select * from Orders", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -100,7 +100,32 @@ namespace shopmanagement
             productcombo.DisplayMember = dt1.Columns[1].ColumnName;
             productcombo.ValueMember = dt1.Columns[0].ColumnName;
         }
-        //----------------------------------ends here-----------------------------------//
 
+        private void categorycombo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(categorycombo.SelectedValue);
+            populateproduct(id);
+        }
+        //----------------------------------ends here-----------------------------------//
+        private void soldbtn_Click(object sender, EventArgs e)
+        {
+            int pid = Convert.ToInt32(productcombo.SelectedValue);
+            int sellprice = Convert.ToInt32(pricetxt.Text);
+            int qty = Convert.ToInt32(qtytxt.Text);
+            SqlCommand cmd = new SqlCommand("insert into Orders values('"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"'," + pid + "," + qty + "," + sellprice +")", con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i == 0)
+            {
+                MessageBox.Show("Something went wrong");
+            }
+            populategrid();
+        }
+
+        private void returnbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

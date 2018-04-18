@@ -91,6 +91,7 @@
             this.Editcategory.Size = new System.Drawing.Size(30, 30);
             this.Editcategory.TabIndex = 5;
             this.Editcategory.UseVisualStyleBackColor = false;
+            this.Editcategory.Click += new System.EventHandler(this.Editcategory_Click);
             // 
             // updatebtn
             // 

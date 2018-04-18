@@ -44,11 +44,11 @@
             this.TopTitle = new System.Windows.Forms.Label();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
-            this.administratorcontent = new shopmanagement.administrator();
-            this.order = new shopmanagement.Order();
             this.product = new shopmanagement.Product();
             this.dashboard = new shopmanagement.Dashboard();
             this.Stockcontrol = new shopmanagement.Stock();
+            this.administratorcontent = new shopmanagement.administrator();
+            this.order = new shopmanagement.Order();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,11 +163,11 @@
             // titlelable
             // 
             this.titlelable.AutoSize = true;
-            this.titlelable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlelable.Font = new System.Drawing.Font("Ed Wood Movies", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titlelable.ForeColor = System.Drawing.Color.MintCream;
-            this.titlelable.Location = new System.Drawing.Point(14, 55);
+            this.titlelable.Location = new System.Drawing.Point(12, 55);
             this.titlelable.Name = "titlelable";
-            this.titlelable.Size = new System.Drawing.Size(80, 13);
+            this.titlelable.Size = new System.Drawing.Size(101, 18);
             this.titlelable.TabIndex = 9;
             this.titlelable.Text = "Stock Manager";
             // 
@@ -260,6 +260,35 @@
             this.closebtn.UseVisualStyleBackColor = true;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // product
+            // 
+            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.product.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.product.Location = new System.Drawing.Point(130, 82);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(870, 418);
+            this.product.TabIndex = 3;
+            this.product.Load += new System.EventHandler(this.product_Load);
+            // 
+            // dashboard
+            // 
+            this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard.Location = new System.Drawing.Point(0, 0);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(1000, 500);
+            this.dashboard.TabIndex = 2;
+            // 
+            // Stockcontrol
+            // 
+            this.Stockcontrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Stockcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Stockcontrol.Location = new System.Drawing.Point(0, 0);
+            this.Stockcontrol.Name = "Stockcontrol";
+            this.Stockcontrol.Size = new System.Drawing.Size(1000, 500);
+            this.Stockcontrol.TabIndex = 6;
+            this.Stockcontrol.Load += new System.EventHandler(this.Stockcontrol_Load);
+            // 
             // administratorcontent
             // 
             this.administratorcontent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -277,34 +306,7 @@
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(1000, 500);
             this.order.TabIndex = 4;
-            // 
-            // product
-            // 
-            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.product.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.product.Location = new System.Drawing.Point(0, 0);
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(1000, 500);
-            this.product.TabIndex = 3;
-            // 
-            // dashboard
-            // 
-            this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard.Location = new System.Drawing.Point(0, 0);
-            this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(1000, 500);
-            this.dashboard.TabIndex = 2;
-            // 
-            // Stockcontrol
-            // 
-            this.Stockcontrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Stockcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Stockcontrol.Location = new System.Drawing.Point(130, 82);
-            this.Stockcontrol.Name = "Stockcontrol";
-            this.Stockcontrol.Size = new System.Drawing.Size(870, 418);
-            this.Stockcontrol.TabIndex = 6;
-            this.Stockcontrol.Load += new System.EventHandler(this.Stockcontrol_Load);
+            this.order.Load += new System.EventHandler(this.order_Load);
             // 
             // MainForm
             // 
@@ -312,13 +314,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.Stockcontrol);
+            this.Controls.Add(this.product);
             this.Controls.Add(this.TopPane);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dashboard);
+            this.Controls.Add(this.Stockcontrol);
             this.Controls.Add(this.administratorcontent);
             this.Controls.Add(this.order);
-            this.Controls.Add(this.product);
-            this.Controls.Add(this.dashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

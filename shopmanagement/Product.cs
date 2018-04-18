@@ -13,7 +13,7 @@ namespace shopmanagement
 {
     public partial class Product : UserControl
     {
-        SqlConnection con;
+        public SqlConnection con;
         public Product()
         {
             InitializeComponent();
@@ -55,6 +55,31 @@ namespace shopmanagement
         private void categorycombo_Leave(object sender, EventArgs e)
         {
             combohoverpanel.BackColor = Color.Honeydew;
+        }
+
+        public void populatecategory()
+        {
+            // con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("select id,UPPER(CategoryName) Category from Category order by Category");
+            cmd.Connection = con;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            categorycombo.DataSource = dt;
+            categorycombo.DisplayMember = dt.Columns[1].ColumnName;
+            categorycombo.ValueMember = dt.Columns[0].ColumnName;
+            int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+            populategrid();
+        }
+
+        void populategrid()
+        {
+
+            SqlCommand cmd = new SqlCommand("select * from Product", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            ProductGridView.DataSource = dt;
         }
         //--------------------------------------ends here----------------------------------//
 

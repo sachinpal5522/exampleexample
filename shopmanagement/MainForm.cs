@@ -94,6 +94,7 @@ namespace shopmanagement
             Stockcontrol.BringToFront();
            
         }
+        //****************************************UI DESIGN ENDS HERE***************************************//
 
         private void Stockcontrol_Load(object sender, EventArgs e)
         {
@@ -101,9 +102,16 @@ namespace shopmanagement
             Stockcontrol.populatecategory();
         }
 
+        private void order_Load(object sender, EventArgs e)
+        {
+            order.con = RefToForm1.cn;
+            order.populatecategory();
+        }
 
-        //****************************************UI DESIGN ENDS HERE***************************************//
-
-
+        private void product_Load(object sender, EventArgs e)
+        {
+            product.con = RefToForm1.cn;
+            product.populatecategory();
+        }
     }
 }

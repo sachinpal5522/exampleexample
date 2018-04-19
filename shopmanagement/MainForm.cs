@@ -70,6 +70,7 @@ namespace shopmanagement
         {
             ActivePane.Top = Productbtn.Top;
             TopTitle.Text = "Product";
+            product.populatecategory();
             product.BringToFront();
         }
 
@@ -77,6 +78,7 @@ namespace shopmanagement
         {
             ActivePane.Top = Orderbtn.Top;
             TopTitle.Text = "Order";
+            order.populatecategory();
             order.BringToFront();
         }
 
@@ -91,6 +93,7 @@ namespace shopmanagement
         {
             ActivePane.Top = stockbtn.Top;
             TopTitle.Text = "Stock Purchased";
+            Stockcontrol.populatecategory();
             Stockcontrol.BringToFront();
            
         }

@@ -77,11 +77,14 @@ namespace shopmanagement
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            categorycombo.DataSource = dt;
-            categorycombo.DisplayMember = dt.Columns[1].ColumnName;
-            categorycombo.ValueMember = dt.Columns[0].ColumnName;
-            int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
-            populateproduct(id);
+            if (dt != null && dt.Rows.Count > 0) {
+                categorycombo.DataSource = dt;
+                categorycombo.DisplayMember = dt.Columns[1].ColumnName;
+                categorycombo.ValueMember = dt.Columns[0].ColumnName;
+                int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+                populateproduct(id);
+            }
+            
             populategrid();
         }
 

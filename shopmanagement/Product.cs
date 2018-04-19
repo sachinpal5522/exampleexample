@@ -93,7 +93,16 @@ namespace shopmanagement
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-
+            int cid = Convert.ToInt32(categorycombo.SelectedValue);
+            SqlCommand cmd = new SqlCommand("UPDATE Product set Name = '"+prodnametxt.Text+"',cid="+ cid + " where id="+RowId, con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i == 0)
+            {
+                MessageBox.Show("Something went wrong");
+            }
+            populategrid();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -118,6 +127,8 @@ namespace shopmanagement
             if (e.StateChanged == DataGridViewElementStates.Selected)
             {
                 RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
+                prodnametxt.Text = e.Row.Cells[1].FormattedValue.ToString();
+                categorycombo.SelectedValue= e.Row.Cells[2].FormattedValue.ToString();
             }
         }
     }

@@ -17,7 +17,6 @@ namespace shopmanagement
         private Point lastLocation;
         public SqlConnection con;
         private int RowId;
-        private string catname;
         public CategoryForm()
         {
             InitializeComponent();
@@ -84,12 +83,20 @@ namespace shopmanagement
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-
+            SqlCommand cmd = new SqlCommand("UPDATE Category set CategoryName='" + CatNametext.Text + "' where id=" + RowId, con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i == 0)
+            {
+                MessageBox.Show("Something went wrong");
+            }
+            populategrid();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you want to delete Category " + catname + " ??", "Alert!!!", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Do you want to delete Category " + CatNametext.Text + " ??", "Alert!!!", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -120,7 +127,7 @@ namespace shopmanagement
             if (e.StateChanged == DataGridViewElementStates.Selected)
             {
                 RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
-                catname = e.Row.Cells[1].FormattedValue.ToString();
+                CatNametext.Text = e.Row.Cells[1].FormattedValue.ToString();
             }
         }
     }

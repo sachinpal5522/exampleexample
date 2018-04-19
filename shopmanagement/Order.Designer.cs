@@ -327,6 +327,7 @@
             this.OrderDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OrderDataGridView.Size = new System.Drawing.Size(615, 418);
             this.OrderDataGridView.TabIndex = 2;
+            this.OrderDataGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.OrderDataGridView_RowStateChanged);
             // 
             // Order
             // 

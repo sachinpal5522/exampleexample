@@ -13,13 +13,13 @@ namespace shopmanagement
 {
     public partial class Stock : UserControl
     {
-        
+
         public Stock()
         {
             InitializeComponent();
         }
         public SqlConnection con;
-       
+        private int RowId;
         //---------------------------------design function-----------------------------------//
         private void categorycombo_Enter(object sender, EventArgs e)
         {
@@ -87,12 +87,12 @@ namespace shopmanagement
 
         void populategrid()
         {
-            
-            SqlCommand cmd = new SqlCommand("select * from StockPurchased",con);
+
+            SqlCommand cmd = new SqlCommand("select * from StockPurchased", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            ProductGridView.DataSource = dt;
+            DataTable dtGrid = new DataTable();
+            da.Fill(dtGrid);
+            ProductGridView.DataSource = dtGrid;
         }
 
         void populateproduct(int id)
@@ -113,16 +113,16 @@ namespace shopmanagement
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-           // SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
-            
+            // SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ConnectionString);
+
             int pid = Convert.ToInt32(productcombo.SelectedValue);
-            int buyprice=Convert.ToInt32(pricetxt.Text);
-            int qty=Convert.ToInt32(qtytxt.Text);
-            SqlCommand cmd = new SqlCommand( "insert into StockPurchased values("+pid+","+qty+","+buyprice+",'"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"')",con);
+            int buyprice = Convert.ToInt32(pricetxt.Text);
+            int qty = Convert.ToInt32(qtytxt.Text);
+            SqlCommand cmd = new SqlCommand("insert into StockPurchased values(" + pid + "," + qty + "," + buyprice + ",'" + DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt") + "')", con);
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
-            if(i==0)
+            if (i == 0)
             {
                 MessageBox.Show("Something went wrong");
             }
@@ -131,10 +131,27 @@ namespace shopmanagement
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Do you want to delete product " + RowId+" ??", "Alert!!!", MessageBoxButtons.YesNo);
 
+            if (result==DialogResult.Yes) {
+                SqlCommand cmd = new SqlCommand("delete from StockPurchased where id=" + RowId, con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i == 0)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+                populategrid();
+            }
         }
 
-       
-
-    }
+        private void ProductGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
+            }
+        }
+    }     
 }

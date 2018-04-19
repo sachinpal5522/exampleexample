@@ -15,6 +15,7 @@ namespace shopmanagement
     public partial class Order : UserControl
     {
         public SqlConnection con;
+        private int RowId;
         public Order()
         {
             InitializeComponent();
@@ -125,7 +126,28 @@ namespace shopmanagement
 
         private void returnbtn_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Are You sure want to return  order " + RowId + " ??", "Alert!!!", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from Orders where id=" + RowId, con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i == 0)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+                populategrid();
+            }
+        }
+
+        private void OrderDataGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
+            }
         }
     }
 }

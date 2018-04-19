@@ -106,6 +106,7 @@
             this.updatebtn.TabIndex = 4;
             this.updatebtn.Text = "update";
             this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // deletebtn
             // 
@@ -120,6 +121,7 @@
             this.deletebtn.TabIndex = 3;
             this.deletebtn.Text = "Delete ";
             this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // addbtn
             // 
@@ -273,6 +275,7 @@
             this.ProductGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductGridView.Size = new System.Drawing.Size(615, 418);
             this.ProductGridView.TabIndex = 2;
+            this.ProductGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.ProductGridView_RowStateChanged);
             // 
             // Product
             // 

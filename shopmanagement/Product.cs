@@ -14,26 +14,12 @@ namespace shopmanagement
     public partial class Product : UserControl
     {
         public SqlConnection con;
+        private int RowId;
         public Product()
         {
             InitializeComponent();
         }
 
-        private void Product_Load(object sender, EventArgs e)
-        {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["StockDatabase"].ToString());
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand("select id,UPPER(CategoryName) from Category");
-            cmd3.Connection = con;
-            DataTable dt2 = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd3);
-            da.Fill(dt2);
-            categorycombo.DataSource = dt2;
-            categorycombo.DisplayMember = dt2.Columns[1].ColumnName;
-            categorycombo.ValueMember = dt2.Columns[0].ColumnName;
-            con.Close();
-
-        }
 // -------------------------------desgin functions---------------------------------//
 
         private void prodnametxt_Enter(object sender, EventArgs e)
@@ -74,7 +60,6 @@ namespace shopmanagement
 
         void populategrid()
         {
-
             SqlCommand cmd = new SqlCommand("select * from Product", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -93,9 +78,47 @@ namespace shopmanagement
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+            string product = prodnametxt.Text;
+            int cid = Convert.ToInt32(categorycombo.SelectedValue);
+            SqlCommand cmd = new SqlCommand("insert into Product values('"+product+"',"+cid+",0,0)", con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i == 0)
+            {
+                MessageBox.Show("Something went wrong");
+            }
+            populategrid();
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
 
         }
 
-        
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Do you want to delete product " + RowId + " ??", "Alert!!!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from Product where id=" + RowId, con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i == 0)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+                populategrid();
+            }
+        }
+
+        private void ProductGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
+            }
+        }
     }
 }

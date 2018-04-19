@@ -16,6 +16,8 @@ namespace shopmanagement
         private bool mouseDown;
         private Point lastLocation;
         public SqlConnection con;
+        private int RowId;
+        private string catname;
         public CategoryForm()
         {
             InitializeComponent();
@@ -87,16 +89,39 @@ namespace shopmanagement
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Do you want to delete Category " + catname + " ??", "Alert!!!", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from Category where id=" + RowId, con);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                con.Close();
+                if (i == 0)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+                populategrid();
+            }
         }
 
         private void populategrid()
         {
-            SqlCommand cmd = new SqlCommand("select CategoryName from Category", con);
+            SqlCommand cmd = new SqlCommand("select * from Category", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             CategoryGridView.DataSource = dt;
+            CategoryGridView.Columns[0].Visible = false;
+        }
+
+        private void CategoryGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                RowId = Convert.ToInt32(e.Row.Cells[0].FormattedValue.ToString());
+                catname = e.Row.Cells[1].FormattedValue.ToString();
+            }
         }
     }
 }

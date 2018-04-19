@@ -281,6 +281,7 @@
             this.CategoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CategoryGridView.Size = new System.Drawing.Size(321, 361);
             this.CategoryGridView.TabIndex = 3;
+            this.CategoryGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.CategoryGridView_RowStateChanged);
             // 
             // CategoryForm
             // 

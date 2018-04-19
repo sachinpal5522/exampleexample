@@ -327,6 +327,7 @@
             this.ProductGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductGridView.Size = new System.Drawing.Size(615, 418);
             this.ProductGridView.TabIndex = 1;
+            this.ProductGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.ProductGridView_RowStateChanged);
             // 
             // Stock
             // 

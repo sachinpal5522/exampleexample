@@ -20,6 +20,7 @@ namespace shopmanagement
         {
             InitializeComponent();
             dashboard.BringToFront();
+            Administrator.Visible = false;
         }
 
         //**********************************UI design functions******************************************//
@@ -115,6 +116,11 @@ namespace shopmanagement
         {
             product.con = RefToForm1.cn;
             product.populatecategory();
+        }
+
+        private void dashboard_Load(object sender, EventArgs e)
+        {
+            dashboard.con = RefToForm1.cn;
         }
     }
 }

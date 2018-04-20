@@ -80,7 +80,7 @@
             this.stockbtn.Location = new System.Drawing.Point(5, 150);
             this.stockbtn.Name = "stockbtn";
             this.stockbtn.Size = new System.Drawing.Size(125, 30);
-            this.stockbtn.TabIndex = 7;
+            this.stockbtn.TabIndex = 1;
             this.stockbtn.Text = "Stock";
             this.stockbtn.UseVisualStyleBackColor = true;
             this.stockbtn.Click += new System.EventHandler(this.stockbtn_Click);
@@ -144,7 +144,7 @@
             this.DashboardBtn.Location = new System.Drawing.Point(5, 100);
             this.DashboardBtn.Name = "DashboardBtn";
             this.DashboardBtn.Size = new System.Drawing.Size(125, 30);
-            this.DashboardBtn.TabIndex = 1;
+            this.DashboardBtn.TabIndex = 7;
             this.DashboardBtn.Text = "Dashboard";
             this.DashboardBtn.UseVisualStyleBackColor = true;
             this.DashboardBtn.Click += new System.EventHandler(this.DashboardBtn_Click);
@@ -278,6 +278,7 @@
             this.dashboard.Name = "dashboard";
             this.dashboard.Size = new System.Drawing.Size(1000, 500);
             this.dashboard.TabIndex = 2;
+            this.dashboard.Load += new System.EventHandler(this.dashboard_Load);
             // 
             // Stockcontrol
             // 

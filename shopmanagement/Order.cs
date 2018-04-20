@@ -116,7 +116,7 @@ namespace shopmanagement
             int pid = Convert.ToInt32(productcombo.SelectedValue);
             int sellprice = Convert.ToInt32(pricetxt.Text);
             int qty = Convert.ToInt32(qtytxt.Text);
-            SqlCommand cmd = new SqlCommand("insert into Orders values('"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"'," + pid + "," + qty + "," + sellprice +")", con);
+            SqlCommand cmd = new SqlCommand("insert into Orders values('"+DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt")+"'," + pid + "," + qty + "," + sellprice +","+0+")", con);
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
